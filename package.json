@@ -1,0 +1,16 @@
+{
+	"name": "even2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"server": "json-server -w server/data.json -p 3001",
+		"dev": "npm-bundle index.html"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"json-server": "^0.17.1"
+	}
+}

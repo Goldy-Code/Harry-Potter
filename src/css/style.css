@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #161d1d;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.fa-solid {
+  cursor: pointer;
+}
+
+/*! NAV */
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1440px;
+  height: 55px;
+  padding: 10px 50px;
+  margin: 0 auto;
+
+  background-color: #7a5003;
+  background-color: transparent;
+  color: gold;
+  font-size: 20px;
+
+  transition: all .4s ease;
+}
+
+.nav__list {
+  display: flex;
+  gap: 20px;
+}
+
+.nav__item {
+  position: relative;
+  display: flex;
+
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 0px;
+  width: 100%;
+  background-color: gold;
+  transition: all 0.1s ease-in-out;
+}
+.nav__item:hover::before {
+  height: 2px;
+}
+
+/*? NAV END */
+
+/*! SERCHER */
+.searcherBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1440px;
+  height: min-content;
+  padding: 40px;
+  margin: 0 auto;
+
+  background-color: #7a5003;
+  color: gold;
+  font-size: 20px;
+
+  transform: translateY(-101%);
+  transition: 0.2s ease;
+}
+
+#searchInput {
+  width: 50%;
+  font-size: 20px;
+  padding: 3px 10px;
+
+  border: 2px solid gold;
+  border-radius: 5px;
+
+  background-color: #7a5003;
+  color: gold;
+}
+
+#searchInput::placeholder {
+  color: rgba(255, 217, 0, 0.4);
+}
+
+#searcherX {
+  font-size: 25px;
+}
+/*? SERCHER END */
+
+/*! HEADER */
+.header {
+  position: relative;
+
+  width: 100%;
+  max-width: 1440px;
+  height: min-content;
+  max-height: 780px;
+
+  margin: 0 auto;
+  /* margin-top: 55px; */
+}
+
+.trailer-video {
+  width: 100%;
+  object-fit: contain;
+}
+
+.logo-cnt {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 1440px;
+}
+
+.logo {
+  width: 100%;
+}
+
+/*? HEADER END */
+
+/*! CONTENET */
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+  padding: 55px 0;
+}
+
+.card {
+  width: calc(33% - 2rem);
+  cursor: pointer;
+}
+
+.frame {
+  background-image: url(https://cdn-hogwartslegacy.warnerbrosgames.com/static/game-info-frame-b.webp);
+
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 0;
+  overflow: hidden;
+  padding-top: 130.9375%;
+  perspective: 900px;
+  perspective-origin: 50%;
+  position: relative;
+}
+
+.content__img {
+  position: absolute;
+  left: 10%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+  clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+  width: 80%;
+  height: 71%;
+}
+
+.clan {
+  position: absolute;
+
+  width: 16%;
+}
+
+.clan-top {
+  right: 10.5%;
+  top: 7%;
+}
+.clan-bot {
+  bottom: 5.5%;
+  left: 9.8%;
+}
+
+/*? CONTENET END */
+
+/*! MODAL */
+.modal__layer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.ramka {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url(https://cdn-hogwartslegacy.warnerbrosgames.com/home/video-frame.webp);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.modal {
+  width: 49%;
+  height: 60vh;
+  max-width: 1330px;
+  position: relative;
+  background-color: #1b2230;
+  color: #fff4e2;
+  padding: 20px 40px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.modal__card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__info {
+  width: 20%;
+}
+
+.card__img {
+  width: 160px;
+}
+
+#cardX {
+  position: absolute;
+  right: -15px;
+  top: -20px;
+  font-size: 25px;
+  color: #ffd700;
+}
+
+.modalActive {
+  z-index: 1000;
+  opacity: 1;
+}
+
+/*? MODAL END */
+
+#goUp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+
+  transition: all 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+
+  background-color: rgba(218, 165, 32, 0.222);
+  animation-name: snitch;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes snitch {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(218, 165, 32, 0.222),
+      0px 0px 0px 0px rgba(218, 165, 32, 0.222);
+  }
+
+  40% {
+    box-shadow: 0px 0px 0px 10px rgba(218, 165, 32, 0.222),
+      0px 0px 0px 0px rgba(218, 165, 32, 0.222);
+  }
+
+  80% {
+    box-shadow: 0px 0px 0px 20px rgba(218, 165, 32, 0),
+      0px 0px 0px 21.1px rgba(218, 165, 32, 0.111);
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 25px rgba(218, 165, 32, 0),
+      0px 0px 0px 35px rgba(218, 165, 32, 0);
+  }
+}
+
+/** MEDIA */
+
+@media (max-width: 400px) {
+  .nav {
+    height: 40px;
+    padding: 2px 5px;
+    font-size: 15px;
+  }
+
+  .nav__list {
+    gap: 0px;
+  }
+
+  .nav__item {
+    padding: 1px 5px;
+  }
+
+  .nav__item:hover::before {
+    height: 0px;
+  }
+
+  /*? NAV END */
+
+  /*! SERCHER */
+  .searcherBar {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  #searchInput {
+    width: 70%;
+    font-size: 18px;
+    padding: 2px 8px;
+  }
+
+  #searcherX {
+    font-size: 23px;
+  }
+  /*? SERCHER END */
+
+  /*! MODAL */
+  .modal__layer {
+    display: flex;
+  }
+
+  .ramka {
+    background-image: none;
+  }
+
+  .modal {
+    width: 85%;
+    height: 85vh;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 2px solid gold;
+  }
+
+  .modal__card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .modal__info {
+    width: 50%;
+    text-align: center;
+  }
+
+  #cardX {
+    right: -15px;
+    top: -20px;
+    font-size: 25px;
+  }
+  /*? MODAL END */
+}

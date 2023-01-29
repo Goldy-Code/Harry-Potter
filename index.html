@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>Harry Potter</title>
+  </head>
+  <body>
+    <!--! NAV -->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__btn-All nav__item">All</li>
+        <li class="nav__btn nav__item">Gryffindor</li>
+        <li class="nav__btn nav__item">Slytherin</li>
+        <li class="nav__btn nav__item">Hufflepuff</li>
+        <li class="nav__btn nav__item">Ravenclaw</li>
+      </ul>
+      <i id="searcher" class="fa-solid fa-magnifying-glass"></i>
+    </nav>
+    <!--? NAV END -->
+
+    <!--! SEARCHER -->
+    <div class="searcherBar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="searchInput" type="text" placeholder="Search for Hero" />
+      <i id="searcherX" class="fa-solid fa-xmark"></i>
+    </div>
+    <!--? SEARCHER END -->
+
+    <!--! HEADER -->
+    <header class="header" id="up">
+      <video
+        data-v-1b1fb969=""
+        autoplay="autoplay"
+        muted="muted"
+        loop="loop"
+        playsinline=""
+        src="https://cdn-hogwartslegacy.warnerbrosgames.com/home/hero.mp4?c=b"
+        class="trailer-video"
+      ></video>
+      <div class="logo-cnt">
+        <img
+          src="https://cdn-hogwartslegacy.warnerbrosgames.com/home/hero-logo.png"
+          alt="logo"
+          class="logo"
+        />
+      </div>
+    </header>
+    <!--? HEADER END -->
+
+    <!--! CONTENT  -->
+    <div class="content"></div>
+    <!--? CONTENT END -->
+
+    <!--! MODAL -->
+    <div class="modal__layer"></div>
+
+    <!--? MODAL END -->
+
+    <!--! GO UP  -->
+
+    <a href="#up" id="goUp">
+      <img class="goUp__img" src="src/img/snitch.png" alt="" />
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.4/axios.min.js"></script>
+    <script type="module" src="src/js/app.js"></script>
+  </body>
+</html>
