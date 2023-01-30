@@ -240,7 +240,6 @@ input {
   background-color: rgba(0, 0, 0, 0.7);
 
   opacity: 0;
-  transition: all 0.3s linear;
 }
 
 .ramka {
