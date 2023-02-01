@@ -47,7 +47,7 @@ input {
   color: gold;
   font-size: 20px;
 
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .nav__list {
@@ -178,6 +178,39 @@ input {
 .card {
   width: calc(33% - 2rem);
   cursor: pointer;
+
+  animation-name: animka;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+}
+
+.animation {
+  animation-name: animka-out;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+}
+
+@keyframes animka {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes animka-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
 }
 
 .frame {

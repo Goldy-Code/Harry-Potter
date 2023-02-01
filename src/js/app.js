@@ -150,9 +150,15 @@ const fetchData = async () => {
 		//! NAV
 		const nav__btn_All = document.querySelector('.nav__btn-All');
 		nav__btn_All.addEventListener('click', () => {
-			createCards(response.data);
 			const cards = document.querySelectorAll('.card');
-			modalShit(cards);
+			cards.forEach((el) => {
+				el.classList.add('animation');
+			});
+
+			setTimeout(() => {
+				createCards(response.data);
+				modalShit(cards);
+			}, 1500);
 		});
 
 		const nav__btn = document.querySelectorAll('.nav__btn');
@@ -161,9 +167,16 @@ const fetchData = async () => {
 
 				let text = el.innerHTML;
 				let clanFilter = response.data.filter((item) => item.house === text); //! pokazivayet
-				createCards(clanFilter);
 				const cards = document.querySelectorAll('.card');
-				modalShit(cards);
+
+				setTimeout(() => {
+					createCards(clanFilter);
+					modalShit(cards);
+				}, 1500);
+
+				cards.forEach((el) => {
+					el.classList.add('animation');
+				});
 			});
 		});
 		//! NAV END
@@ -187,16 +200,16 @@ const fetchData = async () => {
 		searchInput.addEventListener('input', () => {
 			let value = searchInput.value.toLowerCase().trim();
 			let clanInput = response.data.filter((item) => item.name.toLowerCase().trim().includes(value) || item.house.toLowerCase().trim().includes(value));
-			createCards(clanInput);
-
-
 			const cards = document.querySelectorAll('.card');
-			modalShit(cards);
 
-
-			modal__layer.addEventListener('click', () => {
-				modal__layer.classList.remove('modalActive');
+			cards.forEach((el) => {
+				el.classList.add('animation');
 			});
+
+			setTimeout(() => {
+				createCards(clanInput);
+				modalShit(cards);
+			}, 1500);
 		})
 
 		//* MODAL END
