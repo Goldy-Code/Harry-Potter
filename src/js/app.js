@@ -86,8 +86,6 @@ const fetchData = async () => {
 
 		//! MODAL
 		const modal__layer = document.querySelector('.modal__layer');
-		const cards = document.querySelectorAll('.card');
-
 
 
 
@@ -157,7 +155,7 @@ const fetchData = async () => {
 
 			setTimeout(() => {
 				createCards(response.data);
-				modalShit(cards);
+				modalShit();
 			}, 1500);
 		});
 
@@ -171,7 +169,7 @@ const fetchData = async () => {
 
 				setTimeout(() => {
 					createCards(clanFilter);
-					modalShit(cards);
+					modalShit();
 				}, 1500);
 
 				cards.forEach((el) => {
@@ -181,7 +179,8 @@ const fetchData = async () => {
 		});
 		//! NAV END
 
-		function modalShit(cards) {
+		function modalShit() {
+			const cards = document.querySelectorAll('.card');
 			cards.forEach((el) => {
 				el.addEventListener('click', () => {
 					foo(el);
@@ -189,7 +188,7 @@ const fetchData = async () => {
 			});
 		}
 
-		modalShit(cards);
+		modalShit();
 
 		modal__layer.addEventListener('click', () => {
 			modal__layer.classList.remove('modalActive');
@@ -208,7 +207,7 @@ const fetchData = async () => {
 
 			setTimeout(() => {
 				createCards(clanInput);
-				modalShit(cards);
+				modalShit();
 			}, 1500);
 		})
 
