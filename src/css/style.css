@@ -175,6 +175,11 @@ input {
   padding: 55px 0;
 }
 
+h2 {
+  font-size: 30px;
+  color: #fff4e2;
+}
+
 .card {
   width: calc(33% - 2rem);
   cursor: pointer;

@@ -199,16 +199,14 @@ const fetchData = async () => {
 		searchInput.addEventListener('input', () => {
 			let value = searchInput.value.toLowerCase().trim();
 			let clanInput = response.data.filter((item) => item.name.toLowerCase().trim().includes(value) || item.house.toLowerCase().trim().includes(value));
-			const cards = document.querySelectorAll('.card');
 
-			cards.forEach((el) => {
-				el.classList.add('animation');
-			});
-
-			setTimeout(() => {
+			if (clanInput.length) {
 				createCards(clanInput);
 				modalShit();
-			}, 1500);
+			} else {
+				content.innerHTML = `<h2>No such info!</h2>`
+			}
+
 		})
 
 		//* MODAL END
